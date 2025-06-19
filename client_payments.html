@@ -1,0 +1,275 @@
+<div class="section-header">
+  <h1>Payments & Invoices</h1>
+  <p class="subtitle">Manage your payments and view detailed invoices for all transactions.</p>
+</div>
+
+<div class="subscription-plans">
+  <div class="plan-header">
+    <i class="fas fa-crown"></i>
+    <h3>Subscription Plans</h3>
+  </div>
+  <p>Choose the perfect plan for your business needs. All plans include:</p>
+  <ul class="plan-features">
+    <li><i class="fas fa-check"></i> Access to top 3% talent pool</li>
+    <li><i class="fas fa-check"></i> Dedicated account manager</li>
+    <li><i class="fas fa-check"></i> 14-day risk-free trial</li>
+    <li><i class="fas fa-check"></i> Quality guarantee</li>
+  </ul>
+  
+  <div class="plans-grid">
+    <div class="plan-card">
+      <div class="plan-name">Starter</div>
+      <div class="plan-price">₹4800<span>/month</span></div>
+      <ul class="plan-details">
+        <li>Up to 2 concurrent hires</li>
+        <li>Basic support</li>
+        <li>Standard screening</li>
+        <li>Monthly billing</li>
+      </ul>
+      <button class="btn btn-outline">Current Plan</button>
+    </div>
+    
+    <div class="plan-card featured">
+      <div class="plan-badge">Most Popular</div>
+      <div class="plan-name">Professional</div>
+      <div class="plan-price">₹8000<span>/month</span></div>
+      <ul class="plan-details">
+        <li>Up to 5 concurrent hires</li>
+        <li>Priority support</li>
+        <li>Advanced screening</li>
+        <li>Quarterly billing</li>
+        <li>Custom contracts</li>
+      </ul>
+      <button class="btn btn-primary">Upgrade</button>
+    </div>
+    
+    <div class="plan-card">
+      <div class="plan-name">Enterprise</div>
+      <div class="plan-price">₹16000<span>/month</span></div>
+      <ul class="plan-details">
+        <li>Unlimited hires</li>
+        <li>24/7 dedicated support</li>
+        <li>Premium screening</li>
+        <li>Annual billing</li>
+        <li>Custom contracts</li>
+        <li>Team management</li>
+      </ul>
+      <button class="btn btn-outline">Contact Sales</button>
+    </div>
+  </div>
+</div>
+
+<div class="section-body">
+  <div class="payments-tabs">
+    <button class="btn btn-primary">Pending</button>
+    <button class="btn btn-secondary">Paid</button>
+    <button class="btn btn-secondary">Upcoming</button>
+    <button class="btn btn-secondary">Disputes</button>
+  </div>
+  <table class="payments-table">
+    <thead>
+      <tr>
+        <th>Invoice #</th>
+        <th>Description</th>
+        <th>Amount</th>
+        <th>Toptal Commission (5%)</th>
+        <th>Net Amount</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>INV-001</td>
+        <td>Professional Plan - Monthly</td>
+        <td>₹8,000</td>
+        <td>₹4,000</td>
+        <td>₹76,000</td>
+        <td>Mar 1, 2024</td>
+        <td>Pending</td>
+        <td>
+          <button>Pay Now</button>
+          <button>Download Invoice</button>
+        </td>
+      </tr>
+      <tr>
+        <td>INV-002</td>
+        <td>Professional Plan - Monthly</td>
+        <td>₹80,000</td>
+        <td>₹4,000</td>
+        <td>₹76,000</td>
+        <td>Feb 1, 2024</td>
+        <td>Paid</td>
+        <td>
+          <button>View Payment History</button>
+          <button>Download Invoice</button>
+        </td>
+      </tr>
+      <tr>
+        <td>INV-003</td>
+        <td>Enterprise Plan - Monthly</td>
+        <td>₹1,60,000</td>
+        <td>₹8,000</td>
+        <td>₹1,52,000</td>
+        <td>Mar 1, 2024</td>
+        <td>Pending</td>
+        <td>
+          <button>Pay Now</button>
+          <button>Download Invoice</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+.subscription-plans {
+  background: #242529;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.plan-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.plan-header i {
+  color: #8b5cf6;
+  font-size: 1.5rem;
+}
+
+.plan-features {
+  list-style: none;
+  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.plan-features i {
+  color: #8b5cf6;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.plan-card {
+  background: #1a1b1e;
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+}
+
+.plan-card.featured {
+  border: 2px solid #8b5cf6;
+}
+
+.plan-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #8b5cf6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.plan-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.plan-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #8b5cf6;
+  margin-bottom: 1.5rem;
+}
+
+.plan-price span {
+  font-size: 1rem;
+  color: #a1a1aa;
+}
+
+.plan-details {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.plan-details li {
+  margin-bottom: 0.8rem;
+  color: #a1a1aa;
+}
+
+.plan-details li:before {
+  content: "✓";
+  color: #8b5cf6;
+  margin-right: 0.5rem;
+}
+
+.btn {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #8b5cf6;
+  color: white;
+  border: none;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #8b5cf6;
+  border: 2px solid #8b5cf6;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('viewPricingDemoBtn');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        // Try to trigger dashboard navigation if inside dashboard
+        if (window.parent && window.parent !== window && window.parent.location) {
+          window.parent.location.hash = '#pricing-demo';
+        } else if (window.location.hash !== undefined) {
+          window.location.hash = '#pricing-demo';
+        } else {
+          window.open('client_pricing_demo.html', '_blank');
+        }
+      });
+    }
+  });
+</script> 

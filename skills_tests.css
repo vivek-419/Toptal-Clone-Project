@@ -1,0 +1,427 @@
+/* skills_tests.css */
+
+.company-tests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.company-test-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow-small);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.company-test-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--primary-color);
+}
+
+.company-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.company-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 2px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.company-info h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.company-info p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.company-criteria,
+.required-skills {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.required-skills strong {
+    color: var(--text-primary);
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.skill-tag {
+    background-color: var(--accent-color-dark);
+    color: var(--accent-color-light);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.tests-section h4 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.test-link-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--primary-button-background);
+    color: var(--primary-button-text);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.test-link-btn:hover {
+    background-color: var(--primary-button-hover);
+    transform: translateY(-2px);
+}
+
+.test-link-btn + .test-link-btn { /* Add margin between buttons */
+    margin-top: 10px;
+}
+
+.no-company-tests {
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 50px;
+    font-size: 1.1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .company-tests-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color); /* Ensure solid background */
+    overflow: auto;
+}
+
+.modal-open {
+    overflow: hidden; /* Prevent scrolling on body when modal is open */
+}
+
+.modal-content {
+    background-color: var(--background-color); /* Ensure solid background */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    max-width: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+}
+
+.modal-header {
+    background-color: var(--card-bg);
+    padding: 20px 30px; /* Adjusted padding for better alignment with content */
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Match width of test-body */
+    margin: 0 auto; /* Center the header */
+    box-shadow: var(--shadow-medium); /* Add subtle shadow to header */
+    border-radius: 12px 12px 0 0; /* Match top radius of test-body, remove bottom */
+}
+
+.modal-header h2 {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    margin: 0;
+    text-align: center;
+}
+
+.close-btn {
+    color: var(--text-secondary);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: color 0.2s ease;
+    position: absolute;
+    right: 30px; /* Adjust right position based on new header padding */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 40px;
+    flex-grow: 1;
+    background-color: var(--background-color); /* Ensure solid background */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+    padding-top: 40px;
+}
+
+.test-body {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--card-bg); /* Ensure solid background */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-medium);
+}
+
+.question-number {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.question-text {
+    font-size: 1.2rem;
+    color: var(--text-primary); /* Ensure text is visible */
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-label {
+    background-color: var(--card-bg); /* Ensure solid background */
+    padding: 15px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    border: 1px solid var(--border-color);
+}
+
+.option-label:hover {
+    background-color: var(--hover-bg);
+    border-color: var(--primary-color);
+}
+
+.option-label input[type="radio"] {
+    margin-right: 15px;
+    accent-color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.option-text {
+    color: var(--text-primary); /* Ensure text is visible */
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.test-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px; /* Increased margin-top for navigation buttons */
+    gap: 15px;
+}
+
+.test-navigation .btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    flex-grow: 1;
+}
+
+.test-navigation .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    border: 1px solid var(--primary-color);
+}
+
+.test-navigation .btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.test-navigation .btn-secondary {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.test-navigation .btn-secondary:hover {
+    background-color: var(--hover-bg);
+    border-color: var(--primary-color);
+}
+
+.modal-footer.test-footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    margin-top: 20px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Add styles for subjective questions */
+.subjective-question {
+    margin-bottom: 30px;
+}
+
+.subjective-question textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--input-bg); /* Ensure solid background */
+    color: var(--text-primary); /* Ensure text is visible */
+    font-size: 1rem;
+    line-height: 1.6;
+    resize: vertical;
+    margin-top: 15px;
+}
+
+.subjective-question textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* Add styles for test results */
+.test-results {
+    text-align: center;
+    padding: 30px;
+}
+
+.test-results h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.score-display {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 20px 0;
+}
+
+.score-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.score-item {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.score-item h4 {
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.score-item p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.correct-answers {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.correct-answers h4 {
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.answer-item {
+    background-color: var(--card-bg); /* Ensure solid background */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.answer-item.correct {
+    border-left: 4px solid #4CAF50;
+}
+
+.answer-item.incorrect {
+    border-left: 4px solid #f44336;
+}
+
+.answer-item .question {
+    color: var(--text-primary); /* Ensure text is visible */
+    margin-bottom: 10px;
+}
+
+.answer-item .correct-answer {
+    color: #4CAF50; /* Ensure text is visible */
+    font-weight: 500;
+}
+
+.answer-item .your-answer {
+    color: var(--text-secondary); /* Ensure text is visible */
+    margin-top: 5px;
+}
+
+.answer-item .your-answer.incorrect {
+    color: #f44336;
+} 

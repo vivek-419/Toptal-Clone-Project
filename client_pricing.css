@@ -1,0 +1,136 @@
+.pricing-container {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pricing-card {
+  background: #2d3136;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  padding: 2rem;
+  min-width: 280px;
+  flex: 1;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(139,92,246,0.18);
+}
+
+.pricing-card.featured {
+  background: #23272c;
+  border: 2px solid #8b5cf6;
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #8b5cf6;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pricing-header h2 {
+  color: #90caf9;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.price {
+  color: #f4f4f5;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.price span {
+  font-size: 1rem;
+  color: #bfc4ca;
+}
+
+.pricing-subtitle {
+  color: #bfc4ca;
+  font-size: 1rem;
+}
+
+.pricing-features {
+  margin: 2rem 0;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  color: #e0e0e0;
+}
+
+.feature i {
+  color: #8b5cf6;
+  font-size: 1.1rem;
+}
+
+.pricing-info {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.info-card {
+  background: #2d3136;
+  border-radius: 12px;
+  padding: 2rem;
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+}
+
+.info-card i {
+  font-size: 2rem;
+  color: #8b5cf6;
+  margin-bottom: 1rem;
+}
+
+.info-card h3 {
+  color: #90caf9;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.info-card p {
+  color: #bfc4ca;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .pricing-container {
+    flex-direction: column;
+  }
+  
+  .pricing-card {
+    width: 100%;
+  }
+  
+  .pricing-info {
+    flex-direction: column;
+  }
+  
+  .info-card {
+    width: 100%;
+  }
+} 

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Log in | Toptal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="logo-wrap">
+    <img src="https://assets.toptal.io/images?url=https%3A%2F%2Fwww.toptal.com%2Ftoptal-logo.png" alt="Toptal Logo" class="logo">
+  </div>
+  <div class="login-container">
+    <div class="user-type-selector" style="text-align:center; margin-bottom: 20px;">
+      <label style="margin-right: 20px;">
+        <input type="radio" name="userType" value="freelancer" checked> Freelancer
+      </label>
+      <label>
+        <input type="radio" name="userType" value="client"> Client
+      </label>
+    </div>
+    <form class="login-form" id="loginForm">
+      <div class="form-header">
+        <h1>Log in</h1>
+        <span class="secured-connection">
+          <svg width="16" height="16"><g fill="none" stroke="#bbb" stroke-width="1.2"><rect x="3" y="7" width="10" height="6" rx="2"/><path d="M6 7V5.5A2 2 0 0110 5.5V7"/></g></svg>
+          Secured connection
+        </span>
+      </div>
+      <input type="email" placeholder="Email" required id="email">
+      <input type="password" placeholder="Password" required id="password">
+      <div class="form-options">
+        <label><input type="checkbox"> Remember me</label>
+        <a href="forgot-password.html" class="lost-password">Lost password?</a>
+      </div>
+      <button type="submit" class="login-btn">Log in</button>
+      <div class="divider"><span>OR</span></div>
+      <button type="button" class="google-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="icon">
+        Log in with Google
+      </button>
+      <button type="button" class="linkedin-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="icon">
+        Sign in with LinkedIn
+      </button>
+      <div class="terms">
+        By clicking <i>Sign in with LinkedIn</i>, you agree to let Toptal store your LinkedIn profile
+      </div>
+      <div class="signup-link">
+        No account? Join Toptal as a <a href="#">freelancer</a> or <a href="#">company</a>
+      </div>
+    </form>
+    <div class="copyright">
+      © Copyright 2010 - 2025 Toptal, LLC
+    </div>
+  </div>
+  <div class="cookie-bar">
+    <span>
+      By continuing to use this site you agree to our <a href="https://www.toptal.com/cookie-policy">Cookie Policy</a>.
+    </span>
+    <button class="got-it-btn">Got it</button>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const userType = document.querySelector('input[name="userType"]:checked')?.value || 'freelancer';
+        // Simple validation
+        if (email && password) {
+            alert('Logged in successfully! Redirecting to dashboard...');
+            if (userType === 'client') {
+                window.location.href = 'client_dashboard.html';
+            } else {
+            window.location.href = 'dashboard.html';
+            }
+        } else {
+            alert('Please enter your email and password.');
+        }
+    });
+  </script>
+</body>
+</html>

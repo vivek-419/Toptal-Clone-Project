@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #242529;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #e4e4e7;
+  }
+  
+  .login-container {
+    max-width: 420px;
+    margin: 80px auto 0 auto;
+    background: #242529;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    padding-bottom: 28px;
+  }
+  
+  .logo-wrap {
+    padding: 20px 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .logo {
+    width: 120px;
+    display: block;
+    filter: brightness(0) invert(1);
+  }
+  
+  .login-form {
+    background: #242529;
+    padding: 40px 32px 0 32px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px 12px 0 0;
+  }
+  
+  .form-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  
+  .form-header h1 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: -1px;
+    color: #f4f4f5;
+  }
+  
+  .secured-connection {
+    color: #a1a1aa;
+    font-size: 0.98rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .login-form input[type="email"],
+  .login-form input[type="password"] {
+    padding: 13px 12px;
+    margin-bottom: 16px;
+    border: 1px solid #3f3f46;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s;
+    background: #18181b;
+    color: #f4f4f5;
+  }
+  
+  .login-form input[type="password"] {
+    margin-bottom: 12px;
+  }
+  
+  .login-form input[type="email"]:focus,
+  .login-form input[type="password"]:focus {
+    border-color: #52525b;
+    background: #18181b;
+    box-shadow: 0 0 0 3px rgba(82, 82, 91, 0.2);
+  }
+  
+  .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    font-size: 0.97rem;
+    color: #a1a1aa;
+  }
+  
+  .lost-password {
+    color: #8b5cf6;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .lost-password:hover {
+    color: #7c3aed;
+  }
+  
+  .login-btn {
+    background: #8b5cf6;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .login-btn:hover {
+    background: #7c3aed;
+  }
+  
+  .divider {
+    text-align: center;
+    color: #71717a;
+    margin: 24px 0;
+    position: relative;
+    height: 20px;
+  }
+  
+  .divider span {
+    background: #242529;
+    padding: 0 16px;
+    position: relative;
+    z-index: 1;
+    font-size: 0.9rem;
+    color: #a1a1aa;
+    font-weight: 500;
+  }
+  
+  .divider:before {
+    content: "";
+    border-top: 1px solid #3f3f46;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+  }
+  
+  .google-btn,
+  .linkedin-btn {
+    background: #2d2e32;
+    color: #f4f4f5;
+    border: 1px solid #3f3f46;
+    padding: 12px;
+    border-radius: 6px;
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .google-btn:hover,
+  .linkedin-btn:hover {
+    background: #3f3f46;
+    border-color: #8b5cf6;
+  }
+  
+  .icon {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .terms {
+    font-size: 0.92rem;
+    color: #a1a1aa;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+  
+  .signup-link {
+    font-size: 0.98rem;
+    color: #a1a1aa;
+    text-align: center;
+  }
+  
+  .signup-link a {
+    color: #8b5cf6;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .signup-link a:hover {
+    color: #7c3aed;
+  }
+  
+  .copyright {
+    font-size: 0.93rem;
+    color: #71717a;
+    text-align: center;
+    padding: 0 32px;
+    margin-top: 24px;
+  }
+  
+  .cookie-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #242529;
+    color: #f4f4f5;
+    font-size: 1rem;
+    padding: 13px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    border-top: 1px solid #3f3f46;
+  }
+  
+  .cookie-bar span {
+    margin-right: 20px;
+  }
+  
+  .cookie-bar a {
+    color: #3b82f6;
+    text-decoration: underline;
+  }
+  
+  .got-it-btn {
+    background: #8b5cf6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .got-it-btn:hover {
+    background: #7c3aed;
+  }
+  
+  @media (max-width: 500px) {
+    .login-container {
+      padding: 20px 8px;
+      max-width: 98vw;
+    }
+    .login-form {
+      padding: 24px 6px 18px 6px;
+    }
+  }
+  

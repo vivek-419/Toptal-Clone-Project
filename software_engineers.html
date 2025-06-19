@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineers | Toptal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .engineers-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+            margin: 40px 0;
+        }
+        .engineer-card {
+            background: #18181b;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(139,92,246,0.08);
+            padding: 32px 24px;
+            width: 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: box-shadow 0.2s, transform 0.2s;
+            cursor: pointer;
+        }
+        .engineer-card:hover {
+            box-shadow: 0 8px 32px rgba(139,92,246,0.18);
+            transform: translateY(-4px) scale(1.03);
+        }
+        .engineer-photo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #8b5cf6;
+            margin-bottom: 16px;
+        }
+        .engineer-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #8b5cf6;
+            margin-bottom: 6px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .engineer-title {
+            color: #a1a1aa;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+        .engineer-location {
+            color: #8b5cf6;
+            font-size: 0.98rem;
+            margin-bottom: 10px;
+        }
+        .engineer-summary {
+            color: #d1d5db;
+            font-size: 0.98rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="dashboard-body">
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo-wrap">
+                    <img src="https://assets.toptal.io/images?url=https%3A%2F%2Fwww.toptal.com%2Ftoptal-logo.png" alt="Toptal" class="logo-img">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1 style="margin-top:40px; color:#f4f4f5; text-align:center;">Software Engineers</h1>
+            <div class="engineers-grid">
+                <div class="engineer-card" onclick="window.location.href='profile_alice.html'">
+                    <img src="vivek.jpg" alt="Vivek Prasad" class="engineer-photo">
+                    <div class="engineer-name" onclick="window.location.href='profile_alice.html'; event.stopPropagation();">Vivek Prasad</div>
+                    <div class="engineer-title">Lead Front-end Developer</div>
+                    <div class="engineer-location">Mumbai, India</div>
+                    <div class="engineer-summary">Vivek is a seasoned front-end developer and technical leader, specializing in JavaScript and frameworks such as Angular, React, and Node.js. He is adept at building responsive, mobile-first websites and excels in leadership, effective communication, and fostering collaborative team environments.</div>
+                </div>
+                <div class="engineer-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Jonah Elbaz" class="engineer-photo">
+                    <div class="engineer-name">Jonah Elbaz</div>
+                    <div class="engineer-title">Senior Backend Engineer</div>
+                    <div class="engineer-location">San Francisco, USA</div>
+                    <div class="engineer-summary">Jonah specializes in scalable backend systems, cloud infrastructure, and distributed databases. He has led teams at top Silicon Valley startups and is passionate about clean, maintainable code.</div>
+                </div>
+                <div class="engineer-card">
+                    <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=300&h=300&fit=crop&crop=face" alt="Alice Johnson" class="engineer-photo">
+                    <div class="engineer-name">Alice Johnson</div>
+                    <div class="engineer-title">Full Stack Developer</div>
+                    <div class="engineer-location">London, UK</div>
+                    <div class="engineer-summary">Alice is a full stack developer with expertise in React, Node.js, and Python. She enjoys building robust web applications and mentoring junior developers in best practices.</div>
+                </div>
+                <div class="engineer-card">
+                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=300&h=300&fit=crop&crop=face" alt="Carlos Martinez" class="engineer-photo">
+                    <div class="engineer-name">Carlos Martinez</div>
+                    <div class="engineer-title">DevOps & Cloud Engineer</div>
+                    <div class="engineer-location">Barcelona, Spain</div>
+                    <div class="engineer-summary">Carlos is a DevOps specialist with a focus on AWS, Docker, and CI/CD pipelines. He has automated deployments for global enterprises and is an advocate for infrastructure as code.</div>
+                </div>
+                <!-- Add more engineer cards here if needed -->
+            </div>
+        </div>
+    </main>
+</body>
+</html> 

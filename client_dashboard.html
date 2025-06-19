@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard - Toptal</title>
+    <link rel="stylesheet" href="client_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <aside class="dashboard-sidebar">
+        <div class="sidebar-header">
+            <div class="logo-wrap">
+                <img src="https://assets.toptal.io/images?url=https%3A%2F%2Fwww.toptal.com%2Ftoptal-logo.png" alt="Toptal" class="logo-img">
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="#post-job" class="nav-item active"><span class="icon"><i class="fas fa-plus-circle"></i></span>Post a Job</a></li>
+                <li><a href="#job-listings" class="nav-item"><span class="icon"><i class="fas fa-list"></i></span>My Job Listings</a></li>
+                <li><a href="#matched-talent" class="nav-item"><span class="icon"><i class="fas fa-users"></i></span>Matched Talent</a></li>
+                <li><a href="#interviews" class="nav-item"><span class="icon"><i class="fas fa-calendar-alt"></i></span>Interviews</a></li>
+                <li><a href="#my-developers" class="nav-item"><span class="icon"><i class="fas fa-user-check"></i></span>My Developers</a></li>
+                <li><a href="#project-tracker" class="nav-item"><span class="icon"><i class="fas fa-tasks"></i></span>Project Tracker</a></li>
+                <li><a href="#messages" class="nav-item"><span class="icon"><i class="fas fa-comments"></i></span>Messages</a></li>
+                <li><a href="#payments" class="nav-item"><span class="icon"><i class="fas fa-credit-card"></i></span>Payments & Invoices</a></li>
+                <li><a href="#pair-recommendation" class="nav-item"><span class="icon" title="Unique Feature"><i class="fas fa-magic"></i></span>Dev Pair Recommendation <span style="color:#00b894;">(New!)</span></a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="index.html" class="logout-btn">
+                <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                Logout
+            </a>
+        </div>
+    </aside>
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <div class="header-search">
+                <input type="search" placeholder="Search..." class="search-input">
+            </div>
+            <div class="header-actions">
+                <button class="notification-btn">
+                    <span class="icon"><i class="fas fa-bell"></i></span>
+                    <span class="badge">2</span>
+                </button>
+                <div class="user-menu">
+                    <img src="vivek.jpg" alt="Vivek Prasad" class="user-avatar">
+                    <span class="user-name">Client User</span>
+                </div>
+            </div>
+        </header>
+        <div class="dashboard-content" id="dashboard-content">
+            <!-- Section content will be loaded here -->
+        </div>
+    </main>
+    <script src="client_dashboard.js"></script>
+</body>
+</html> 

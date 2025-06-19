@@ -1,0 +1,130 @@
+.dev-cards-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+.dev-card.detailed {
+  background: #2d3136;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  min-width: 260px;
+  flex: 1 1 300px;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.dev-card.detailed:hover {
+  box-shadow: 0 4px 16px rgba(139,92,246,0.18);
+  transform: translateY(-4px) scale(1.03);
+}
+.dev-card.detailed .dev-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  border: 2px solid #353a40;
+}
+.dev-card.detailed .dev-name {
+  color: #90caf9;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.verified-badge {
+  color: #00b894;
+  font-size: 1.1rem;
+  margin-left: 0.2rem;
+  vertical-align: middle;
+}
+.dev-card.detailed .dev-role {
+  color: #bfc4ca;
+  font-size: 1.02rem;
+  margin-bottom: 0.2rem;
+}
+.dev-rating {
+  color: #fbbf24;
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.dev-rating i {
+  color: #fbbf24;
+}
+.dev-card.detailed .dev-skills {
+  color: #e0e0e0;
+  font-size: 0.97rem;
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.skill-badge {
+  background: #ede9fe;
+  color: #8b5cf6;
+  border-radius: 12px;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.dev-last-active {
+  color: #42a5f5;
+  font-size: 0.93rem;
+  margin-bottom: 0.7rem;
+}
+.dev-card.detailed .dev-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.dev-card.detailed button, .btn.btn-primary {
+  background: #8b5cf6;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 1rem;
+  font-size: 0.97rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.dev-card.detailed button:hover, .btn.btn-primary:hover {
+  background: #7c3aed;
+  color: #fff;
+}
+.btn.btn-primary {
+  background: #00b894;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.btn.btn-primary:hover {
+  background: #00916e;
+}
+@media (max-width: 900px) {
+  .dev-cards-list {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .dev-card.detailed {
+    min-width: 0;
+    width: 100%;
+  }
+} 

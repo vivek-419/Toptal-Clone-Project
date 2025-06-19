@@ -1,0 +1,412 @@
+/* General body styling for hire_talent.html */
+body {
+    background-color: var(--dashboard-body-bg); /* Use a variable from dashboard.css */
+    color: var(--text-primary); /* Use primary text color */
+    font-family: 'Inter', sans-serif;
+}
+
+/* Header Bar */
+.hire-talent-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: var(--card-bg); /* Dark background for the header */
+    border-bottom: 1px solid var(--border-color); /* Subtle border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hire-talent-header .header-logo img {
+    height: 50px;
+    filter: brightness(0) invert(1); /* Invert logo for dark background */
+}
+
+.hire-talent-header .trusted-companies {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.hire-talent-header .trusted-companies .company-name {
+    font-weight: bold;
+    color: var(--text-primary); /* White text on dark background */
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.hire-talent-header .trusted-companies .company-logo {
+    display: none; /* Hide image logos */
+}
+
+/* Main Content Area */
+.hire-talent-main {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: calc(100vh - 80px); /* Adjust based on header height */
+    background-color: var(--dashboard-body-bg); /* Ensure this area is also dark */
+}
+
+.hire-talent-main .container {
+    max-width: 800px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Info Banner */
+.info-banner {
+    background-color: rgba(139, 92, 246, 0.1); /* Light purple background */
+    color: var(--primary-color); /* Purple text */
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Step Container */
+.hire-talent-step {
+    display: none; /* Hidden by default, managed by JS */
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hire-talent-step.active {
+    display: block;
+}
+
+.step-indicator {
+    font-size: 0.85rem;
+    color: var(--text-secondary); /* Muted text */
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.main-question {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary); /* Bold, primary text */
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+/* Options List - Card Style Buttons */
+.options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option-card {
+    background-color: #333438; /* Slightly lighter card background */
+    color: var(--text-primary);
+    border: 1px solid var(--border-color); /* Subtle border */
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.option-card:hover {
+    background-color: #3a3b3f; /* Darker on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.option-card.selected {
+    background-color: var(--primary-color); /* Highlight selected card */
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.option-card.selected .text-content span,
+.option-card.selected .icon,
+.option-card.selected .arrow-icon {
+    color: white; /* Ensure text and icons are white on selected card */
+}
+
+.option-card .icon {
+    font-size: 24px; /* Larger icon size */
+    margin-right: 20px; /* More space between icon and text */
+    color: #8b5cf6; /* Consistent purple color */
+    width: 30px; /* Fixed width for alignment */
+    text-align: center;
+}
+
+.option-card .text-content {
+    flex-grow: 1;
+}
+
+.option-card .role-title {
+    display: block;
+    font-size: 1.1rem; /* Slightly smaller for professionalism */
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-primary); /* Ensure consistent text color */
+}
+
+.option-card .role-description {
+    font-size: 0.85rem; /* Slightly smaller for professionalism */
+    color: var(--text-secondary); /* Muted description text */
+}
+
+.option-card .arrow-icon {
+    font-size: 1.5rem;
+    color: var(--text-secondary); /* Muted arrow color */
+    margin-left: 15px;
+}
+
+/* Footer Link */
+.footer-link {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.footer-link a {
+    color: var(--primary-color); /* Purple link color */
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.footer-link a:hover {
+    color: var(--primary-hover);
+}
+
+/* Progress Bar Styles */
+.progress-bar-container {
+    width: 100%;
+    background-color: var(--border-color); /* Greyish background for the bar container */
+    height: 8px; /* Thin bar */
+    border-radius: 4px;
+    margin-top: 0px; /* Adjust as needed */
+    position: sticky;
+    top: 70px; /* Below the header */
+    z-index: 5;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%; /* Will be controlled by JS */
+    background-color: var(--primary-color); /* Purple fill */
+    border-radius: 4px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Back arrow styling */
+.step-indicator .back-arrow {
+    margin-right: 10px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.step-indicator .back-arrow:hover {
+    color: var(--primary-color);
+}
+
+/* Form Styles (for Step 8) */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.form-group input[type="email"],
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+/* Skill Input Container (Step 6) */
+.skill-input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#skillInput {
+    padding-right: 40px; /* Space for the search icon */
+}
+
+.skill-input-container .search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+.selected-skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.selected-skill-pill {
+    background-color: var(--primary-color); /* Purple background */
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.selected-skill-pill .remove-skill {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Popular Skills (Step 6) */
+.popular-skills {
+    margin-top: 30px;
+}
+
+.popular-skills-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-pill {
+    background-color: #333438; /* Slightly lighter card background */
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.skill-pill:hover {
+    background-color: var(--primary-light); /* Light purple on hover */
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Form Actions (for Step 6 and 8) */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.form-actions .btn-primary:disabled {
+    background-color: var(--text-secondary); /* Muted color when disabled */
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.form-actions .skip-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.form-actions .skip-link:hover {
+    color: var(--primary-color);
+}
+
+/* Legal Notice (Step 8) */
+.legal-notice {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.legal-notice a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.legal-notice a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hire-talent-header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 15px;
+    }
+
+    .hire-talent-header .trusted-companies {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .hire-talent-header .company-logo {
+        height: 20px;
+    }
+
+    .progress-bar-container {
+        top: 60px; /* Adjust for smaller header */
+    }
+
+    .main-question {
+        font-size: 1.5rem;
+    }
+
+    .option-card {
+        padding: 15px;
+    }
+
+    .option-card .icon {
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+
+    .option-card .role-title {
+        font-size: 1rem;
+    }
+
+    .option-card .role-description {
+        font-size: 0.8rem;
+    }
+} 

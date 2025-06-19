@@ -1,0 +1,40 @@
+.my-developers-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #23272c;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+  margin-bottom: 1.5rem;
+}
+.my-developers-table th, .my-developers-table td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid #353a40;
+  text-align: left;
+}
+.my-developers-table th {
+  background: #23272c;
+  color: #bfc4ca;
+  font-weight: 600;
+}
+.my-developers-table tr:last-child td {
+  border-bottom: none;
+}
+.my-developers-table td {
+  color: #e0e0e0;
+}
+.my-developers-table button {
+  background: #8b5cf6;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 1rem;
+  font-size: 0.97rem;
+  cursor: pointer;
+  margin-right: 0.3rem;
+  transition: background 0.2s, color 0.2s;
+}
+.my-developers-table button:hover {
+  background: #7c3aed;
+  color: #fff;
+} 

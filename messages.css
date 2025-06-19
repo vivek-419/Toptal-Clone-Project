@@ -1,0 +1,111 @@
+/* messages.css */
+
+.messages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.message-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow-small);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.message-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--primary-color);
+}
+
+.message-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.message-icon {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.message-header h3 {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.message-meta {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-left: auto;
+}
+
+.message-content p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.message-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.message-tag {
+    background-color: var(--accent-color-dark);
+    color: var(--accent-color-light);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.message-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.message-actions .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.no-messages {
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 50px;
+    font-size: 1.1rem;
+}
+
+/* Message Type Specific Styles (Optional) */
+.message-card.vacancy .message-icon {
+    color: #4CAF50; /* Green for vacancies */
+}
+
+.message-card.opportunity .message-icon {
+    color: #00BFFF; /* Blue for opportunities */
+}
+
+.message-card.posting .message-icon {
+    color: #FFD700; /* Gold for general postings */
+}
+
+@media (max-width: 768px) {
+    .messages-grid {
+        grid-template-columns: 1fr;
+    }
+} 

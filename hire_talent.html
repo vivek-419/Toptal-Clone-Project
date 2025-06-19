@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire Top Talent - Toptal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css"> <!-- For shared color variables -->
+    <link rel="stylesheet" href="hire_talent.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="hire-talent-header">
+        <div class="header-logo">
+            <img src="https://assets.toptal.io/images?url=https%3A%2F%2Fwww.toptal.com%2Ftoptal-logo.png" alt="Toptal" class="logo-img">
+        </div>
+        <div class="trusted-companies">
+            <!-- Company names as text -->
+            <span class="company-name">ABInBev</span>
+            <span class="company-name">Los Angeles Times</span>
+            <span class="company-name">ClassPass</span>
+            <span class="company-name">Duolingo</span>
+            <span class="company-name">DoorDash</span>
+            <span class="company-name">Kohler</span>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <main class="hire-talent-main">
+        <div class="container">
+            <div class="info-banner">
+                <p>Thanks for your interest in hiring through Toptal! Before we get started, we'd like to ask a few questions to better understand your business needs.</p>
+            </div>
+
+            <div id="step-1" class="hire-talent-step active">
+                <p class="step-indicator">STEP 1</p>
+                <h2 class="main-question">Who would you like to hire?</h2>
+                <div class="options-list">
+                    <button class="option-card" data-next-step="2" data-value="developer">
+                        <span class="icon"><i class="fas fa-code"></i></span>
+                        <div class="text-content">
+                            <span class="role-title">Developer</span>
+                            <span class="role-description">Software Developer, Data Scientist, DevOps, QA...</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="2" data-value="designer">
+                        <span class="icon"><i class="fas fa-pencil-ruler"></i></span>
+                        <div class="text-content">
+                            <span class="role-title">Designer</span>
+                            <span class="role-description">UI/UX, Product, Visual, Interaction...</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="2" data-value="marketing-expert">
+                        <span class="icon"><i class="fas fa-bullhorn"></i></span>
+                        <div class="text-content">
+                            <span class="role-title">Marketing Expert</span>
+                            <span class="role-description">Digital Marketing, Growth, Content, SEO...</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="2" data-value="project-manager">
+                        <span class="icon"><i class="fas fa-project-diagram"></i></span>
+                        <div class="text-content">
+                            <span class="role-title">Project Manager</span>
+                            <span class="role-description">Digital, Technical, Scrum Master...</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="2" data-value="product-manager">
+                        <span class="icon"><i class="fas fa-cube"></i></span>
+                        <div class="text-content">
+                            <span class="role-title">Product Manager</span>
+                            <span class="role-description">Digital Product, Scrum Product Owner...</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="2" data-value="management-consultant">
+                        <span class="icon"><i class="fas fa-chart-line"></i></span>
+                        <div class="text-content">
+                            <span class="role-title">Management Consultant</span>
+                            <span class="role-description">Finance Expert, Business Strategist, M&A...</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                </div>
+                <div class="footer-link">
+                    <a href="apply.html">Are you a talent?</a>
+                </div>
+            </div>
+
+            <!-- Step 2: Company Size Selection -->
+            <div id="step-2" class="hire-talent-step">
+                <p class="step-indicator"><i class="fas fa-arrow-left back-arrow"></i> STEP 2</p>
+                <h2 class="main-question">How many people are employed at your company?</h2>
+                <div class="options-list">
+                    <button class="option-card" data-next-step="3" data-value="less-than-10">
+                        <div class="text-content">
+                            <span class="role-title">Less than 10</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="3" data-value="11-50">
+                        <div class="text-content">
+                            <span class="role-title">11 - 50</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="3" data-value="51-200">
+                        <div class="text-content">
+                            <span class="role-title">51 - 200</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="3" data-value="201-1000">
+                        <div class="text-content">
+                            <span class="role-title">201 - 1000</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="3" data-value="1001-5000">
+                        <div class="text-content">
+                            <span class="role-title">1001 - 5000</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="3" data-value="more-than-5000">
+                        <div class="text-content">
+                            <span class="role-title">More than 5000</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Other steps will be dynamically loaded or hidden -->
+            <!-- Step 3: Project Type Selection -->
+            <div id="step-3" class="hire-talent-step">
+                <p class="step-indicator"><i class="fas fa-arrow-left back-arrow"></i> STEP 3</p>
+                <h2 class="main-question">What type of project are you hiring for?</h2>
+                <div class="options-list">
+                    <button class="option-card" data-next-step="4" data-value="new-idea">
+                        <div class="text-content">
+                            <span class="role-title">New idea or project</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="4" data-value="existing-project">
+                        <div class="text-content">
+                            <span class="role-title">Existing project that needs more resources</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="4" data-value="just-learning">
+                        <div class="text-content">
+                            <span class="role-title">None of the above, I'm just looking to learn more about Toptal</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                </div>
+                <div class="footer-link">
+                    <a href="#" class="skip-link" data-next-step="4">Skip</a>
+                </div>
+            </div>
+
+            <!-- Step 4: Project Duration Selection -->
+            <div id="step-4" class="hire-talent-step">
+                <p class="step-indicator"><i class="fas fa-arrow-left back-arrow"></i> STEP 4</p>
+                <h2 class="main-question">How long do you need the developer?</h2>
+                <div class="options-list">
+                    <button class="option-card" data-next-step="5" data-value="less-than-1-week">
+                        <div class="text-content">
+                            <span class="role-title">Less than 1 week</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="5" data-value="1-4-weeks">
+                        <div class="text-content">
+                            <span class="role-title">1 to 4 weeks</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="5" data-value="1-3-months">
+                        <div class="text-content">
+                            <span class="role-title">1 to 3 months</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="5" data-value="3-6-months">
+                        <div class="text-content">
+                            <span class="role-title">3 to 6 months</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="5" data-value="longer-than-6-months">
+                        <div class="text-content">
+                            <span class="role-title">Longer than 6 months</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="5" data-value="decide-later">
+                        <div class="text-content">
+                            <span class="role-title">I'll decide later</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 5: Time Commitment Selection -->
+            <div id="step-5" class="hire-talent-step">
+                <p class="step-indicator"><i class="fas fa-arrow-left back-arrow"></i> STEP 5</p>
+                <h2 class="main-question">What level of time commitment will you require from the developer?</h2>
+                <div class="options-list">
+                    <button class="option-card" data-next-step="6" data-value="full-time">
+                        <div class="text-content">
+                            <span class="role-title">Full time (40 or more hrs/week)</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="6" data-value="part-time">
+                        <div class="text-content">
+                            <span class="role-title">Part time (Less than 40 hrs/week)</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="6" data-value="hourly">
+                        <div class="text-content">
+                            <span class="role-title">Hourly</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="6" data-value="decide-later">
+                        <div class="text-content">
+                            <span class="role-title">I'll decide later</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 6: Skills Selection -->
+            <div id="step-6" class="hire-talent-step">
+                <p class="step-indicator"><i class="fas fa-arrow-left back-arrow"></i> STEP 6</p>
+                <h2 class="main-question">What skills would you like to see in your new hire?</h2>
+                <div class="form-group">
+                    <div class="skill-input-container">
+                        <input type="text" id="skillInput" placeholder="Pick as many or as few as you'd like.">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <div id="selectedSkills" class="selected-skills-container"></div>
+                </div>
+                <div class="popular-skills">
+                    <p class="popular-skills-title">Popular Skills</p>
+                    <div class="skill-pills">
+                        <button class="skill-pill" data-skill="JavaScript">+ JavaScript</button>
+                        <button class="skill-pill" data-skill="CSS">+ CSS</button>
+                        <button class="skill-pill" data-skill="PHP">+ PHP</button>
+                        <button class="skill-pill" data-skill="React">+ React</button>
+                        <button class="skill-pill" data-skill="HTML">+ HTML</button>
+                        <button class="skill-pill" data-skill="Node.js">+ Node.js</button>
+                        <button class="skill-pill" data-skill="iOS">+ iOS</button>
+                        <button class="skill-pill" data-skill="MySQL">+ MySQL</button>
+                        <button class="skill-pill" data-skill="Python">+ Python</button>
+                        <button class="skill-pill" data-skill="HTML5">+ HTML5</button>
+                    </div>
+                </div>
+                <div class="form-actions bottom-actions">
+                    <button type="button" class="btn btn-primary" id="continueBtnStep6" disabled>Continue</button>
+                    <a href="#" class="skip-link" data-next-step="7">Skip</a>
+                </div>
+            </div>
+
+            <!-- Step 7: Start Date Selection -->
+            <div id="step-7" class="hire-talent-step">
+                <p class="step-indicator"><i class="fas fa-arrow-left back-arrow"></i> STEP 7</p>
+                <h2 class="main-question">When do you need the developer to start?</h2>
+                <div class="options-list">
+                    <button class="option-card" data-next-step="8" data-value="immediately">
+                        <div class="text-content">
+                            <span class="role-title">Immediately</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="8" data-value="1-2-weeks">
+                        <div class="text-content">
+                            <span class="role-title">In 1 to 2 weeks</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="8" data-value="more-than-2-weeks">
+                        <div class="text-content">
+                            <span class="role-title">More than 2 weeks from now</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                    <button class="option-card" data-next-step="8" data-value="decide-later">
+                        <div class="text-content">
+                            <span class="role-title">I'll decide later</span>
+                        </div>
+                        <span class="arrow-icon">&rarr;</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 8: Contact Information Form -->
+            <div id="step-8" class="hire-talent-step">
+                <p class="step-indicator"><i class="fas fa-arrow-left back-arrow"></i> STEP 8</p>
+                <h2 class="main-question">Success! Let's connect you with talent.</h2>
+                <div class="info-banner">
+                    <p>Thanks for your interest in hiring through Toptal! Before we get started, we'd like to ask a few questions to better understand your business needs.</p>
+                </div>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="my.name@company.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="companyName">Company Name</label>
+                        <input type="text" id="companyName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactName">Contact Name</label>
+                        <input type="text" id="contactName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone (Optional)</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    <div class="form-actions bottom-actions">
+                        <button type="submit" class="btn btn-primary" id="connectTalentBtn" disabled>Connect Me With Talent</button>
+                    </div>
+                    <p class="legal-notice">
+                        By completing signup, you are agreeing to Toptal's <a href="#">Terms of Service</a>, <a href="#">Privacy Policy</a>, <a href="#">Sourced Talent Matching Agreement</a>, and that audio or video meetings made through Toptal's systems may be recorded or monitored for quality assurance, training, and compliance purposes or for your convenience.
+                    </p>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="hire_talent.js"></script>
+</body>
+</html> 

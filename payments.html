@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments - Toptal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="payments.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar">
+        <div class="sidebar-header">
+            <div class="logo-wrap">
+                <img src="https://assets.toptal.io/images?url=https%3A%2F%2Fwww.toptal.com%2Ftoptal-logo.png" alt="Toptal" class="logo-img">
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li>
+                    <a href="dashboard.html#overview" class="nav-item">
+                        <span class="icon"><i class="fas fa-chart-pie"></i></span>
+                        Overview
+                    </a>
+                </li>
+                <li>
+                    <a href="profile_alice.html" class="nav-item">
+                        <span class="icon"><i class="fas fa-user"></i></span>
+                        Profile
+                    </a>
+                </li>
+                <li>
+                    <a href="projects.html" class="nav-item">
+                        <span class="icon"><i class="fas fa-clipboard-list"></i></span>
+                        Projects
+                    </a>
+                </li>
+                <li>
+                    <a href="messages.html" class="nav-item">
+                        <span class="icon"><i class="fas fa-comments"></i></span>
+                        Messages
+                        <span class="badge">3</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="skills_tests.html" class="nav-item">
+                        <span class="icon"><i class="fas fa-flask"></i></span>
+                        Skills & Tests
+                    </a>
+                </li>
+                <li>
+                    <a href="payments.html" class="nav-item">
+                        <span class="icon"><i class="fas fa-credit-card"></i></span>
+                        Payments
+                    </a>
+                </li>
+                <li>
+                    <a href="interviews.html" class="nav-item">
+                        <span class="icon"><i class="fas fa-calendar-alt"></i></span>
+                        Interviews
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="index.html" class="logout-btn">
+                <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                Logout
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <div class="header-search">
+                <input type="search" placeholder="Search..." class="search-input">
+            </div>
+            <div class="header-actions">
+                <button class="notification-btn">
+                    <span class="icon"><i class="fas fa-bell"></i></span>
+                    <span class="badge">2</span>
+                </button>
+                <div class="user-menu">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="Profile" class="user-avatar">
+                    <span class="user-name">John Doe</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+            <div class="project-details-section">
+                <div class="project-header">
+                    <div class="project-title-area">
+                        <span class="toptal-icon"><i class="fas fa-toptal"></i></span>
+                        <h1 class="project-title">Project for <span id="projectNameDisplay">[Project Name]</span></h1>
+                        <span class="status-dot online"></span>
+                    </div>
+                    <div class="project-actions">
+                        <button class="btn icon-btn"><i class="fas fa-camera"></i></button>
+                        <button class="btn icon-btn"><i class="fas fa-thumbtack"></i></button>
+                        <div class="timer-controls">
+                            <button class="btn play-pause-btn"><i class="fas fa-play"></i></button>
+                            <span class="timer-display">000:00:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-billing-summary">
+                    <div class="summary-item">
+                        <i class="fas fa-calendar-alt icon-blue"></i>
+                        <span>Since</span>
+                        <span class="value" id="projectSinceDate">02/26/19</span>
+                    </div>
+                    <div class="summary-item">
+                        <i class="fas fa-dollar-sign icon-blue"></i>
+                        <span>Hourly Rate</span>
+                        <span class="value" id="hourlyRate">2 USD/hour</span>
+                    </div>
+                    <div class="summary-item">
+                        <i class="fas fa-clock icon-blue"></i>
+                        <span>Weekly Limit</span>
+                        <span class="value" id="weeklyLimit">3 hour/s</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="time-and-earnings-section">
+                <div class="card">
+                    <h2 class="card-title">Total to Date <i class="fas fa-question-circle tooltip-icon"></i></h2>
+                    <div class="card-content-grid">
+                        <div class="grid-item">
+                            <span class="label">Tracked Hours</span>
+                            <span class="value" id="totalTrackedHours">0m</span>
+                        </div>
+                        <div class="grid-item">
+                            <span class="label">Earnings</span>
+                            <span class="value" id="totalEarnings">$0.00 USD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">Active Invoice</h2>
+                    <div class="card-content-grid">
+                        <div class="grid-item">
+                            <span class="label">Date</span>
+                            <span class="value" id="invoiceDate">02/25/19 - 03/03/19</span>
+                        </div>
+                        <div class="grid-item">
+                            <span class="label">Tracked Hours</span>
+                            <span class="value" id="invoiceTrackedHours">0m</span>
+                        </div>
+                        <div class="grid-item">
+                            <span class="label">Payable</span>
+                            <span class="value" id="invoicePayable">$0.00 USD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-banner">
+                <p>Your tracked hours between <span id="trackedHoursStartDate">February 25, 2019</span> and <span id="trackedHoursEndDate">March 03, 2019</span> will be automatically paid on <span id="paymentDate">March 06, 2019</span>.</p>
+            </div>
+
+            <div class="section-header"><h1>Payments & Invoices</h1></div>
+            <div class="section-body">
+                <div class="commission-note">
+                    <strong>Note:</strong> 5% of each payment is paid to Toptal as a commission.
+                </div>
+                <!-- Pending Payments -->
+                <h2>Pending Payments</h2>
+                <table class="payments-table">
+                    <thead>
+                        <tr>
+                            <th>Project</th><th>Developer</th><th>Invoice Date</th><th>Amount</th><th>Due Date</th><th>Status</th><th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TMS App</td><td>Arjun Rao</td><td>12 Jun 2025</td><td>₹45,000</td><td>17 Jun</td><td>Awaiting</td>
+                            <td><button class="pay-btn">Pay Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>CRM Tool</td><td>Priya Mehta</td><td>10 Jun 2025</td><td>₹30,000</td><td>15 Jun</td><td>Awaiting</td>
+                            <td><button class="pay-btn">Pay Now</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="payments-actions">
+                    <button class="download-btn">Download Invoice</button>
+                    <button class="dispute-btn">Raise Dispute</button>
+                    <button class="bulk-pay-btn">Bulk Pay Selected</button>
+                </div>
+                <!-- Paid Invoices -->
+                <h2>Paid Invoices</h2>
+                <table class="payments-table">
+                    <thead>
+                        <tr>
+                            <th>Invoice ID</th><th>Project</th><th>Developer</th><th>Amount</th><th>Paid On</th><th>Status</th><th>Receipt</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>INV-1045</td><td>TMS App</td><td>Arjun Rao</td><td>₹45,000</td><td>14 Jun</td><td>Paid</td>
+                            <td><button class="download-btn">Download</button></td>
+                        </tr>
+                        <tr>
+                            <td>INV-1044</td><td>Design System</td><td>Priya Mehta</td><td>₹12,000</td><td>10 Jun</td><td>Paid</td>
+                            <td><button class="download-btn">Download</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="payments-actions">
+                    <button class="download-btn">Download Receipt</button>
+                    <button class="view-invoice-btn">View Invoice</button>
+                    <button class="email-btn">Send Copy via Email</button>
+                </div>
+                <!-- Upcoming Payments -->
+                <h2>Upcoming Payments</h2>
+                <table class="payments-table">
+                    <thead>
+                        <tr>
+                            <th>Developer</th><th>Project</th><th>Next Payment</th><th>Amount</th><th>Recurrence</th><th>Auto-Pay</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Priya Mehta</td><td>Design System</td><td>20 Jun 2025</td><td>₹12,000</td><td>Weekly</td><td>✅</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="payments-actions">
+                    <button class="edit-btn">Edit Schedule</button>
+                    <button class="cancel-btn">Cancel Payment</button>
+                    <button class="plan-btn">View Payment Plan</button>
+                </div>
+                <!-- Disputes -->
+                <h2>Disputes</h2>
+                <table class="payments-table">
+                    <thead>
+                        <tr>
+                            <th>Dispute ID</th><th>Project</th><th>Developer</th><th>Amount</th><th>Reason</th><th>Status</th><th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>D-102</td><td>CRM Tool</td><td>John Doe</td><td>₹8,000</td><td>Incomplete delivery</td><td>Under Review</td>
+                            <td><button class="view-details-btn">View Details</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="payments.js"></script>
+</body>
+</html> 

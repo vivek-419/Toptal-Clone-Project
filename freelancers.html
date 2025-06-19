@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching Freelancers - Toptal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="freelancers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo-wrap">
+                    <img src="https://assets.toptal.io/images?url=https%3A%2F%2Fwww.toptal.com%2Ftoptal-logo.png" alt="Toptal" class="logo-img">
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#" class="nav-link">Top 3%</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link">Hire Talent <span class="dropdown-arrow">▼</span></a>
+                        </li>
+                        <li><a href="#" class="nav-link">Consulting & Services</a></li>
+                        <li><a href="#" class="nav-link">Clients</a></li>
+                        <li><a href="#" class="nav-link">Blog</a></li>
+                        <li><a href="#" class="nav-link">About Us</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-actions">
+                    <a href="apply.html" class="btn btn-outline">Apply as a Talent</a>
+                    <a href="hire_talent.html" class="btn btn-primary">Hire Top Talent</a>
+                    <a href="login.html" class="nav-link">Log In</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="freelancer-main">
+        <div class="container">
+            <h1 class="page-title">Matching Freelancer Profiles</h1>
+            <p class="page-subtitle">Based on your hiring preferences:</p>
+            <div class="selected-skills-display" id="selectedSkillsDisplay"></div>
+            <div class="freelancer-grid" id="freelancerGrid">
+                <!-- Freelancer profiles will be loaded here by JavaScript -->
+            </div>
+            <p class="no-results" id="noResultsMessage" style="display: none;">No matching freelancers found for your selected skills.</p>
+        </div>
+    </main>
+
+    <script src="freelancers.js"></script>
+</body>
+</html> 

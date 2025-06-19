@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Comparison Demo</title>
+  <link rel="stylesheet" href="client_pricing_demo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="pricing-demo-bg">
+    <div class="subscription-illustration" style="display:flex; justify-content:center; gap:2rem; margin-bottom:2.5rem; font-family:'Inter','Segoe UI','Roboto','Helvetica Neue',Arial,sans-serif;">
+      <div class="sub-card" style="background:#23272c; border-radius:16px; padding:1.5rem 1.2rem; min-width:180px; text-align:center; box-shadow:0 2px 8px rgba(139,92,246,0.10);">
+        <div style="font-size:2.2rem; margin-bottom:0.7rem;"><i class="fas fa-car" style="color:#fbbf24;"></i></div>
+        <div style="color:#fbbf24; font-weight:700; font-size:1.1rem; margin-bottom:0.3rem;">START</div>
+        <div style="color:#e0e0e0; font-size:1.3rem; font-weight:700; margin-bottom:0.7rem;">₹480</div>
+        <button class="btn btn-primary" style="background:#8b5cf6; color:#fff; border-radius:8px; padding:0.5rem 1.2rem; font-weight:600;">BUY NOW</button>
+      </div>
+      <div class="sub-card" style="background:#2d3136; border-radius:16px; padding:1.5rem 1.2rem; min-width:200px; text-align:center; box-shadow:0 4px 16px rgba(139,92,246,0.18); border:3px solid #8b5cf6; position:relative; z-index:2;">
+        <div style="font-size:2.2rem; margin-bottom:0.7rem;"><i class="fas fa-plane" style="color:#8b5cf6;"></i></div>
+        <div style="color:#8b5cf6; font-weight:700; font-size:1.1rem; margin-bottom:0.3rem;">STANDARD</div>
+        <div style="color:#e0e0e0; font-size:1.3rem; font-weight:700; margin-bottom:0.7rem;">₹800</div>
+        <button class="btn btn-primary" style="background:#8b5cf6; color:#fff; border-radius:8px; padding:0.5rem 1.2rem; font-weight:600;">BUY NOW</button>
+      </div>
+      <div class="sub-card" style="background:#23272c; border-radius:16px; padding:1.5rem 1.2rem; min-width:180px; text-align:center; box-shadow:0 2px 8px rgba(139,92,246,0.10);">
+        <div style="font-size:2.2rem; margin-bottom:0.7rem;"><i class="fas fa-train" style="color:#ef4444;"></i></div>
+        <div style="color:#ef4444; font-weight:700; font-size:1.1rem; margin-bottom:0.3rem;">PREMIUM</div>
+        <div style="color:#e0e0e0; font-size:1.3rem; font-weight:700; margin-bottom:0.7rem;">₹1600</div>
+        <button class="btn btn-primary" style="background:#8b5cf6; color:#fff; border-radius:8px; padding:0.5rem 1.2rem; font-weight:600;">BUY NOW</button>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <h1>Pricing Comparison</h1>
+      <p class="subtitle">See the difference between standard and premium talent. Try our interactive demo to understand the value.</p>
+    </div>
+
+    <div class="pricing-demo-container">
+      <div class="demo-controls">
+        <div class="demo-toggle">
+          <span>Standard</span>
+          <label class="switch">
+            <input type="checkbox" id="pricingToggle">
+            <span class="slider"></span>
+          </label>
+          <span>Premium</span>
+        </div>
+        <div class="demo-project-selector">
+          <select id="projectType">
+            <option value="web">Web Development</option>
+            <option value="mobile">Mobile App</option>
+            <option value="design">UI/UX Design</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="comparison-cards">
+        <div class="comparison-card standard">
+          <div class="card-header">
+            <h3>Standard Talent</h3>
+            <div class="price">₹800<span>/hour</span></div>
+          </div>
+          <div class="talent-demo">
+            <div class="talent-profile">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Standard Talent">
+              <div class="talent-info">
+                <h4>John Doe</h4>
+                <div class="talent-rating">
+                  <i class="fas fa-star"></i>
+                  <span>4.2/5.0</span>
+                </div>
+              </div>
+            </div>
+            <div class="talent-stats">
+              <div class="stat">
+                <span class="label">Response Time</span>
+                <span class="value">24-48 hours</span>
+              </div>
+              <div class="stat">
+                <span class="label">Experience</span>
+                <span class="value">3 years</span>
+              </div>
+              <div class="stat">
+                <span class="label">Projects</span>
+                <span class="value">15+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="comparison-card premium">
+          <div class="card-header">
+            <h3>Premium Talent</h3>
+            <div class="price">₹1600<span>/hour</span></div>
+          </div>
+          <div class="talent-demo">
+            <div class="talent-profile">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop" alt="Premium Talent">
+              <div class="talent-info">
+                <h4>Sarah Smith</h4>
+                <div class="talent-rating">
+                  <i class="fas fa-star"></i>
+                  <span>4.9/5.0</span>
+                </div>
+              </div>
+            </div>
+            <div class="talent-stats">
+              <div class="stat">
+                <span class="label">Response Time</span>
+                <span class="value">2-4 hours</span>
+              </div>
+              <div class="stat">
+                <span class="label">Experience</span>
+                <span class="value">8+ years</span>
+              </div>
+              <div class="stat">
+                <span class="label">Projects</span>
+                <span class="value">50+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-estimate">
+        <h3>Project Cost Estimate</h3>
+        <div class="estimate-calculator">
+          <div class="input-group">
+            <label>Project Duration (weeks)</label>
+            <input type="number" id="projectDuration" value="8" min="1" max="52">
+          </div>
+          <div class="input-group">
+            <label>Hours per Week</label>
+            <input type="number" id="hoursPerWeek" value="40" min="10" max="60">
+          </div>
+          <div class="estimate-results">
+            <div class="result standard">
+              <span class="label">Standard Cost</span>
+              <span class="value" id="standardCost">₹128,000</span>
+            </div>
+            <div class="result premium">
+              <span class="label">Premium Cost</span>
+              <span class="value" id="premiumCost">₹256,000</span>
+            </div>
+            <div class="result difference">
+              <span class="label">Difference</span>
+              <span class="value" id="costDifference">₹128,000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="value-proposition">
+        <h3>Why Choose Premium?</h3>
+        <div class="value-grid">
+          <div class="value-item">
+            <i class="fas fa-check-circle"></i>
+            <h4>Faster Delivery</h4>
+            <p>Premium talent typically delivers 30% faster</p>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-check-circle"></i>
+            <h4>Higher Quality</h4>
+            <p>99% of premium projects meet or exceed expectations</p>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-check-circle"></i>
+            <h4>Better Communication</h4>
+            <p>24/7 availability and quick response times</p>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-check-circle"></i>
+            <h4>Risk-Free Trial</h4>
+            <p>2-week trial period with money-back guarantee</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="client_pricing_demo.js"></script>
+</body>
+</html> 

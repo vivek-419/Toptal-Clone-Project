@@ -1,0 +1,20 @@
+<div style="text-align:center; margin-bottom:2rem;">
+  <button id="viewPricingDemoBtn" class="btn btn-primary" style="background:#8b5cf6; color:#fff; font-weight:600; font-size:1.1rem; padding:0.7rem 2.2rem; border-radius:8px;">View Pricing Demo</button>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('viewPricingDemoBtn');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        // If inside dashboard, change hash to trigger section load
+        if (window.parent && window.parent !== window && window.parent.location) {
+          window.parent.location.hash = '#pricing-demo';
+        } else if (window.location.hash !== undefined) {
+          window.location.hash = '#pricing-demo';
+        } else {
+          window.open('client_pricing_demo.html', '_blank');
+        }
+      });
+    }
+  });
+</script> 

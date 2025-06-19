@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toptal - Hire Talent from the <u>Top 3%</u></title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        // Cookie banner functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookieBanner = document.getElementById('cookieBanner');
+            if (!localStorage.getItem('cookieConsent')) {
+                cookieBanner.classList.add('show');
+            }
+        });
+
+        function hideCookieBanner() {
+            const cookieBanner = document.getElementById('cookieBanner');
+            cookieBanner.classList.remove('show');
+            localStorage.setItem('cookieConsent', 'true');
+        }
+
+        // Handle setting account name
+        document.addEventListener('DOMContentLoaded', function() {
+            const setAccountNameBtn = document.getElementById('setAccountNameBtn');
+            const accountNameInput = document.getElementById('accountNameInput');
+
+            if (setAccountNameBtn && accountNameInput) {
+                setAccountNameBtn.addEventListener('click', function() {
+                    const userName = accountNameInput.value.trim();
+                    if (userName) {
+                        localStorage.setItem('dashboardUserName', userName);
+                        alert('Your name will now appear in the dashboard!');
+                    } else {
+                        alert('Please enter a name.');
+                    }
+                });
+            }
+        });
+    </script>
+</head>
+<body data-page='index'>
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <span>By continuing to use this site you agree to our <a href="https://www.toptal.com/cookie-policy" target="_blank">Cookie Policy</a></span>
+            <button class="cookie-btn" onclick="hideCookieBanner()">Got it</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo-wrap">
+                    <img src="https://assets.toptal.io/images?url=https%3A%2F%2Fwww.toptal.com%2Ftoptal-logo.png" alt="Toptal" class="logo-img">
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="https://www.toptal.com/top-3-percent" class="nav-link" target="_blank">Top 3%</a></li>
+                        <li class="dropdown">
+                            <a href="hire_talent.html" class="nav-link">Hire Talent <span class="dropdown-arrow">▼</span></a>
+                        </li>
+                        <li><a href="https://www.toptal.com/services" class="nav-link" target="_blank">Consulting & Services</a></li>
+                        <li><a href="https://www.toptal.com/clients" class="nav-link" target="_blank">Clients</a></li>
+                        <li><a href="https://www.toptal.com/blog" class="nav-link" target="_blank">Blog</a></li>
+                        <li><a href="https://www.toptal.com/about" class="nav-link" target="_blank">About Us</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-actions">
+                    <a href="apply.html" class="btn btn-outline">Apply as a Talent</a>
+                    <a href="hire_talent.html" class="btn btn-primary">Hire Top Talent</a>
+                    <a href="login.html" class="nav-link">Log In</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Hire the <span class="highlight">Top 3%</span><br>
+                        of Talent<span class="trademark">™</span>
+                    </h1>
+                    <p class="hero-description">
+                        Toptal is an exclusive network of the top software developers, designers, marketing experts, management consultants, product managers, and project managers in the world. Top companies hire Toptal talent for their most important projects.
+                    </p>
+                    <a href="hire_talent.html" class="btn btn-primary btn-large">Hire Top Talent</a>
+                </div>
+                <div class="hero-visual">
+                    <div class="talent-showcase">
+                        <img src="vladimir.avif" alt="Vladimir Mitrovic" class="talent-photo">
+                    </div>
+                    <div class="hero-talent-card">
+                        <img src="Screenshot 2025-06-12 at 5.20.50 PM.png" alt="World Map" class="map-placeholder">
+                        <div class="talent-details">
+                            <h4>Jonah Elbaz</h4>
+                            <div class="verified">✓ Verified Expert in Engineering</div>
+                            <div class="role">&lt;/&gt; JavaScript Developer</div>
+                            <div class="company">PREVIOUSLY AT<br><strong>facebook</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted Brands Section -->
+    <section class="trusted-brands">
+        <div class="container">
+            <p class="trusted-text">TRUSTED BY LEADING BRANDS AND STARTUPS</p>
+            <div class="brands-carousel">
+                <div class="brand-item">
+                    <img src="Ibm.png" alt="IBM" style="filter: brightness(0) invert(1);">
+                </div>
+                <div class="brand-item">
+                    <img src="google.webp" alt="Google" style="filter: brightness(0) invert(1);">
+                </div>
+                <div class="brand-item">
+                    <img src="microsoft.png" alt="Microsoft" style="filter: brightness(0) invert(1);">
+                </div>
+                <div class="brand-item">
+                    <img src="aws.png" alt="AWS" style="filter: brightness(0) invert(1);">
+                </div>
+                <div class="brand-item">
+                    <img src="intel.png" alt="Intel" style="filter: brightness(0) invert(1);">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Talent Showcase -->
+    <section class="talent-showcase-section">
+        <div class="container">
+            <div class="talent-carousel">
+                <div class="talent-card-item">
+                    <img src="adan.jpg" alt="Vladimir Mitrovic">
+                    <div class="talent-details">
+                        <h4>Adan Perez</h4>
+                        <div class="verified">✓ Verified Expert in Engineering</div>
+                        <div class="role">C# Developer</div>
+                        <div class="company">PREVIOUSLY AT<br><strong>Apple</strong></div>
+                    </div>
+                </div>
+                <div class="talent-card-item">
+                    <img src="jonah.jpg" alt="Jonah Elbaz">
+                    <div class="talent-details">
+                        <h4>Casey Arrington</h4>
+                        <div class="verified">✓ Verified Expert in Design</div>
+                        <div class="role">Product Designer</div>
+                        <div class="company">PREVIOUSLY AT<br><strong>Apple</strong></div>
+                    </div>
+                </div>
+                <div class="talent-card-item">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=face" alt="Carole Crawford">
+                    <div class="talent-details">
+                        <h4>Carole Crawford, CFA</h4>
+                        <div class="verified">✓ Verified Expert in Management Consulting</div>
+                        <div class="role">Finance Expert</div>
+                        <div class="company">PREVIOUSLY AT<br><strong>Morgan Stanley</strong></div>
+                    </div>
+                </div>
+                <div class="talent-card-item">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face" alt="Matthew Warkentin">
+                    <div class="talent-details">
+                        <h4>Matthew Warkentin</h4>
+                        <div class="verified">✓ Verified Expert in Engineering</div>
+                        <div class="role">Python Developer</div>
+                        <div class="company" style="text-align: right;">PREVIOUSLY AT<br><strong>Cornell University</strong></div>
+                    </div>
+                </div>
+                <div class="talent-card-item">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=face" alt="Casey Arrington">
+                    <div class="talent-details">
+                        <h4>Casey Arrington</h4>
+                        <div class="verified">✓ Verified Expert in Product Management</div>
+                        <div class="role">Product Manager</div>
+                        <div class="company" style="text-align: right;">PREVIOUSLY AT<br><strong>SpaceX</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Leverage World-class Talent</h2>
+            <p class="section-subtitle">We are the largest, globally-distributed network of top business, design, and technology talent, ready to tackle your most important initiatives.</p>
+            
+            <div class="services-grid">
+                <div class="service-card developers">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <h3>Developers</h3>
+                    <p>Seasoned software engineers, coders, and architects with expertise across hundreds of technologies.</p>
+                </div>
+                <div class="service-card designers">
+                    <div class="service-icon"><i class="fas fa-pencil-ruler"></i></div>
+                    <h3>Designers</h3>
+                    <p>Expert UI, UX, Visual, and Interaction designers as well as a wide range of illustrators, animators, and more.</p>
+                </div>
+                <div class="service-card consultants">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Management Consultants</h3>
+                    <p>Finance experts, business strategists, M&A consultants, financial modelers, and more, with expertise ranging from market research to FP&A.</p>
+                    <a href="#" class="btn btn-secondary btn-small">View Management Consultants &rarr;</a>
+                </div>
+                <div class="service-card project-managers">
+                    <div class="service-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>Project Managers</h3>
+                    <p>Digital and technical project managers, scrum masters, and more with expertise in numerous PM tools, frameworks, and styles.</p>
+                </div>
+                <div class="service-card product-managers">
+                    <div class="service-icon"><i class="fas fa-cube"></i></div>
+                    <h3>Product Managers</h3>
+                    <p>Digital product managers, scrum product owners with expertise in numerous industries like banking, healthcare, ecommerce, and more.</p>
+                </div>
+                <div class="service-card marketing">
+                    <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Marketing Experts</h3>
+                    <p>Experts in digital marketing, growth marketing, content creation, market research, brand strategy execution, social media marketing, and more.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Propositions -->
+    <section class="value-props">
+        <div class="container">
+            <h2 class="section-title">Build Amazing Teams, On Demand</h2>
+            <p class="section-subtitle">Quickly assemble the teams you need, exactly when you need them.</p>
+            
+            <div class="props-grid">
+                <div class="prop-item">
+                    <div class="prop-icon"><i class="fas fa-hourglass-start"></i></div>
+                    <h3>Hire Quickly</h3>
+                    <p>Hire in under 48 hours. Scale up or down, no strings attached. We offer flexible engagements from hourly to full-time.</p>
+                </div>
+                <div class="prop-item">
+                    <div class="prop-icon"><i class="fas fa-award"></i></div>
+                    <h3>The Top 3%</h3>
+                    <p>Every applicant to the Toptal network is rigorously tested and vetted. Our highly selective process leads to a 98% trial-to-hire success rate.</p>
+                </div>
+                <div class="prop-item">
+                    <div class="prop-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Leading the Future of Work</h3>
+                    <p>Toptal is a pioneer in remote work, enabling companies to tap into a global talent pool for unparalleled access to expertise.</p>
+                </div>
+                <div class="prop-item">
+                    <div class="prop-icon">📈</div>
+                    <h3>A Level Above</h3>
+                    <p>Every single freelancer in our global network embodies the highest levels of integrity, professionalism, and communication.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Hire Freelance Developers</h4>
+                    <ul>
+                        <li><a href="software_engineers.html">Software Developers</a></li>
+                        <li><a href="#">Web Developers</a></li>
+                        <li><a href="#">Mobile App Developers</a></li>
+                        <li><a href="#">iOS Developers</a></li>
+                        <li><a href="#">AI Engineers</a></li>
+                        <li><a href="#">Node.js Developers</a></li>
+                        <li><a href="#">PHP Developers</a></li>
+                        <li><a href="#">React.js Developers</a></li>
+                        <li><a href="#">AngularJS Developers</a></li>
+                        <li><a href="#">Python Developers</a></li>
+                        <li><a href="#">Full-stack Developers</a></li>
+                        <li><a href="#">Front-end Developers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Hire Freelance Designers</h4>
+                    <ul>
+                        <li><a href="#">Mobile App Designers</a></li>
+                        <li><a href="#">Graphic Designers</a></li>
+                        <li><a href="#">Brand Designers</a></li>
+                        <li><a href="#">SEO Experts</a></li>
+                        <li><a href="#">Social Media Content Creators</a></li>
+                        <li><a href="#">Fractional CMOs</a></li>
+                        <li><a href="#">Product Management Consultants</a></li>
+                        <li><a href="#">Digital Product Managers</a></li>
+                        <li><a href="#">Product Consultants</a></li>
+                        <li><a href="#">Web Project Managers</a></li>
+                        <li><a href="#">Mobile Project Managers</a></li>
+                        <li><a href="#">Finance Experts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Hire Freelance Marketing Experts</h4>
+                    <ul>
+                        <li><a href="#">Interim CFOs</a></li>
+                        <li><a href="#">Startup Funding Consultants</a></li>
+                        <li><a href="#">M&A Consultants</a></li>
+                        <li><a href="#">ABM Marketing</a></li>
+                        <li><a href="#">OpenAI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Why Toptal</h4>
+                    <ul>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Press Center</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <img src="https://assets.toptal.io/images?url=https%3A%2F%2Fwww.toptal.com%2Ftoptal-logo.png" alt="Toptal" style="filter: brightness(0) invert(1);">
+                    <p>The World's Top Talent, On Demand®</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/toptal/" class="social-link" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="https://www.linkedin.com/company/toptal" class="social-link" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="https://www.facebook.com/toptal/" class="social-link" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-legal">
+                <p>Copyright 2010 - 2025 Toptal, LLC | <a href="#">Privacy Policy</a> | <a href="#">Website Terms</a> | <a href="#">Accessibility</a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+

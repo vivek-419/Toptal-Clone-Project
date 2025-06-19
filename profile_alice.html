@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alice Johnson - Lead Front-end Developer | Toptal®</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="freelancers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background: #1a1b1e; color: #f4f4f5; }
+        .profile-container { max-width: 900px; margin: 40px auto; background: #18181b; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.2); padding: 40px 32px; animation: fadeIn 1s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(40px);} to { opacity: 1; transform: none; } }
+        .profile-header { display: flex; align-items: center; gap: 32px; margin-bottom: 32px; }
+        .profile-photo-wrap { position: relative; }
+        .profile-photo-glow { position: absolute; top: 50%; left: 50%; width: 180px; height: 180px; background: radial-gradient(circle, #8b5cf6 0%, #1a1b1e 80%); border-radius: 50%; filter: blur(18px); transform: translate(-50%, -50%); z-index: 0; opacity: 0.5; }
+        .profile-photo { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 4px solid #242529; position: relative; z-index: 1; animation: bounceIn 1.2s cubic-bezier(.68,-0.55,.27,1.55); }
+        @keyframes bounceIn { 0% { transform: scale(0.7); opacity: 0; } 60% { transform: scale(1.1); opacity: 1; } 100% { transform: scale(1); } }
+        .profile-main { flex: 1; }
+        .profile-name { font-size: 2.5rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -1px; display: flex; align-items: center; gap: 12px; }
+        .profile-name i { color: #8b5cf6; animation: iconPop 1.2s cubic-bezier(.68,-0.55,.27,1.55); }
+        @keyframes iconPop { 0% { transform: scale(0.5); opacity: 0; } 80% { transform: scale(1.2); opacity: 1; } 100% { transform: scale(1); } }
+        .profile-title { font-size: 1.2rem; color: #a1a1aa; margin-bottom: 8px; }
+        .profile-location { color: #8b5cf6; font-size: 1rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .profile-summary { color: #a1a1aa; font-size: 1.1rem; margin-bottom: 0; }
+        .section-title { font-size: 1.5rem; font-weight: 700; margin: 48px 0 24px; color: #f4f4f5; display: flex; align-items: center; gap: 12px; letter-spacing: -0.5px; }
+        .section-title i { color: #8b5cf6; font-size: 1.3em; }
+        .divider { border: none; border-top: 1.5px solid #232336; margin: 40px 0 32px; }
+        /* Timeline Styles */
+        .timeline { position: relative; margin-left: 30px; margin-bottom: 20px; }
+        .timeline::before { content: ''; position: absolute; left: -15px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, #8b5cf6, #232336 90%); border-radius: 2px; }
+        .timeline-item { position: relative; margin-bottom: 40px; opacity: 0; animation: fadeInTimeline 0.7s forwards; }
+        .timeline-item .timeline-icon { position: absolute; left: -60px; top: 18px; font-size: 1.5em; color: #8b5cf6; background: #232336; border-radius: 50%; padding: 8px; box-shadow: 0 2px 8px rgba(139,92,246,0.12); animation: iconBounce 1s cubic-bezier(.68,-0.55,.27,1.55); }
+        @keyframes iconBounce { 0% { transform: scale(0.5); opacity: 0; } 80% { transform: scale(1.2); opacity: 1; } 100% { transform: scale(1); } }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item:nth-child(7) { animation-delay: 0.7s; }
+        .timeline-item:nth-child(8) { animation-delay: 0.8s; }
+        .timeline-item:nth-child(9) { animation-delay: 0.9s; }
+        @keyframes fadeInTimeline { from { opacity: 0; transform: translateY(40px);} to { opacity: 1; transform: none; } }
+        .timeline-dot { position: absolute; left: -23px; top: 28px; width: 16px; height: 16px; background: #8b5cf6; border-radius: 50%; border: 3px solid #232336; box-shadow: 0 0 0 4px #232336; z-index: 2; }
+        .work-block { background: #232336; border-radius: 10px; padding: 24px 32px; margin-bottom: 0; box-shadow: 0 2px 12px rgba(139, 92, 246, 0.08); transition: box-shadow 0.2s; position: relative; }
+        .work-block:hover { box-shadow: 0 4px 24px rgba(139, 92, 246, 0.18); }
+        .work-title { font-size: 1.1rem; font-weight: 600; color: #8b5cf6; display: flex; align-items: center; gap: 8px; }
+        .work-title i { color: #3b82f6; }
+        .work-company { font-size: 1rem; color: #a1a1aa; margin-bottom: 6px; }
+        .work-duration { font-size: 0.95rem; color: #6b7280; margin-bottom: 10px; }
+        .work-bullets { margin-left: 18px; color: #d1d5db; }
+        /* Project, Education, Certs, Skills */
+        .project-block, .cert-block, .edu-block { background: #232336; border-radius: 10px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(139, 92, 246, 0.08); transition: box-shadow 0.2s; display: flex; align-items: flex-start; gap: 16px; }
+        .project-block:hover, .cert-block:hover, .edu-block:hover { box-shadow: 0 4px 24px rgba(139, 92, 246, 0.18); }
+        .project-icon, .edu-icon, .cert-icon, .skills-icon { font-size: 1.5em; color: #3b82f6; margin-top: 2px; animation: iconPop 1.2s cubic-bezier(.68,-0.55,.27,1.55); }
+        .project-title { font-weight: 600; color: #8b5cf6; font-size: 1.1rem; }
+        .project-link { color: #3b82f6; text-decoration: underline; margin-left: 8px; font-size: 1rem; transition: color 0.2s; }
+        .project-link:hover { color: #8b5cf6; }
+        .project-desc { color: #a1a1aa; margin: 6px 0 0 0; font-size: 1rem; }
+        .edu-block { flex-direction: row; }
+        .edu-degree { font-weight: 600; color: #8b5cf6; }
+        .edu-inst { color: #a1a1aa; }
+        .cert-block { flex-direction: row; }
+        .cert-title { font-weight: 600; color: #8b5cf6; }
+        .cert-issuer { color: #a1a1aa; font-size: 0.98rem; }
+        .skills-section { margin-top: 40px; }
+        .skill-category { font-weight: 600; color: #8b5cf6; margin-top: 18px; margin-bottom: 8px; }
+        .skills-icon { margin-right: 8px; }
+        .skill-badges { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-badge { background: #242529; color: #f4f4f5; border-radius: 20px; padding: 6px 16px; font-size: 0.98rem; border: 1px solid #2d2d3a; transition: background 0.2s, color 0.2s; cursor: pointer; }
+        .skill-badge:hover { background: #8b5cf6; color: #fff; }
+        @media (max-width: 700px) { .profile-header { flex-direction: column; align-items: flex-start; } .profile-container { padding: 20px 6px; } .timeline { margin-left: 10px; } .timeline-item .timeline-icon { left: -40px; } .project-block, .cert-block, .edu-block { flex-direction: column; gap: 8px; } }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo-wrap">
+                    <img src="https://assets.toptal.io/images?url=https%3A%2F%2Fwww.toptal.com%2Ftoptal-logo.png" alt="Toptal" class="logo-img">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-photo-wrap">
+                    <div class="profile-photo-glow"></div>
+                    <img src="vivek.jpg" alt="Vivek Prasad" class="profile-photo">
+                </div>
+                <div class="profile-main">
+                    <div class="profile-name"><i class="fas fa-user-tie"></i> Vivek Prasad</div>
+                    <div class="profile-title">Lead Front-end Developer</div>
+                    <div class="profile-location"><i class="fas fa-map-marker-alt"></i> Mumbai,</div>
+                    <div class="profile-summary">Vivek is a seasoned front-end developer and technical leader, specializing in JavaScript and frameworks such as Angular, React, and Node.js. He is adept at building responsive, mobile-first websites and excels in leadership, effective communication, and fostering collaborative team environments.</div>
+                </div>
+            </div>
+            <hr class="divider">
+            <div class="section-title"><i class="fas fa-briefcase"></i> Work Experience</div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="work-block">
+                        <div class="work-title"><i class="fas fa-laptop-code"></i> Lead Front-end Developer</div>
+                        <div class="work-company">Coinrule</div>
+                        <div class="work-duration">2023 - 2023</div>
+                        <ul class="work-bullets">
+                            <li>Spearheaded front-end development, focusing on key technical decisions to craft intuitive, responsive user interfaces in a fast-paced, crypto startup environment.</li>
+                            <li>Struck a strategic balance between rapid code delivery and high code quality.</li>
+                            <li>Guided front-end strategies to build a robust and forward-looking tech stack.</li>
+                            <li>Played a collaborative role in task refinement, optimizing for both user needs and technical efficiency.</li>
+                            <li>Mentored team members in best practices, fostering a culture that values quality and cohesive teamwork.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="work-block">
+                        <div class="work-title"><i class="fas fa-briefcase"></i> Freelance Web Developer</div>
+                        <div class="work-company">Boston Consulting Group</div>
+                        <div class="work-duration">2019 - 2023</div>
+                        <ul class="work-bullets">
+                            <li>Maintained, developed, and created new features for web apps.</li>
+                            <li>Improved the speed, efficiency, and UX of the apps.</li>
+                            <li>Integrated security and authentication for the apps.</li>
+                            <li>Added PWA features like offline usage for more efficient client demos.</li>
+                            <li>Collaborated closely with data scientists who were developing the back-end systems.</li>
+                            <li>Developed and improved demos used for pitching new clients.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-icon"><i class="fas fa-code"></i></div>
+                    <div class="work-block">
+                        <div class="work-title"><i class="fas fa-code"></i> Freelance Full-stack Web Developer</div>
+                        <div class="work-company">Freelance</div>
+                        <div class="work-duration">2019 - 2023</div>
+                        <ul class="work-bullets">
+                            <li>Worked on a variety of client projects, delivering full-stack solutions using React, Node.js, and MongoDB.</li>
+                            <li>Built scalable REST APIs and integrated third-party services.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-icon"><i class="fas fa-globe"></i></div>
+                    <div class="work-block">
+                        <div class="work-title"><i class="fas fa-globe"></i> Freelance Front-end Developer</div>
+                        <div class="work-company">Aegon Netherlands</div>
+                        <div class="work-duration">2017 - 2019</div>
+                        <ul class="work-bullets">
+                            <li>Developed a project for a client in the financial services industry in the Hague, Netherlands.</li>
+                            <li>Worked mainly with Angular and also implemented microservices using Amazon Lambda and worked on building a REST API with Apigee.</li>
+                            <li>Followed Agile and behavior-driven development techniques and achieved over 90% unit test coverage.</li>
+                            <li>Worked on-site with the team and later moved on to work remotely.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-icon"><i class="fas fa-building"></i></div>
+                    <div class="work-block">
+                        <div class="work-title"><i class="fas fa-building"></i> Front-end Developer</div>
+                        <div class="work-company">Intrum Justitia</div>
+                        <div class="work-duration">2016 - 2017</div>
+                        <ul class="work-bullets">
+                            <li>Built an internal system's front end using Angular 2 as the UI framework and Angular Material as the UI component framework.</li>
+                            <li>Developed a few other internal web projects using JavaScript and Handlebars.js for templating.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-icon"><i class="fas fa-user-graduate"></i></div>
+                    <div class="work-block">
+                        <div class="work-title"><i class="fas fa-user-graduate"></i> Senior Developer</div>
+                        <div class="work-company">Accenture</div>
+                        <div class="work-duration">2015 - 2016</div>
+                        <ul class="work-bullets">
+                            <li>Worked on different onsite projects in Europe as a front-end developer.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-icon"><i class="fas fa-cogs"></i></div>
+                    <div class="work-block">
+                        <div class="work-title"><i class="fas fa-cogs"></i> Developer</div>
+                        <div class="work-company">Scandiweb</div>
+                        <div class="work-duration">2014 - 2015</div>
+                        <ul class="work-bullets">
+                            <li>Implemented eCommerce sites using the Magento platform.</li>
+                            <li>Crafted the responsive design and customized modules (both front-end and back-end) for an e-store for a fashion retailer.</li>
+                            <li>Implemented custom lottery ticket generators in JavaScript with an ability to draw random numbers in different combinations.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-icon"><i class="fas fa-database"></i></div>
+                    <div class="work-block">
+                        <div class="work-title"><i class="fas fa-database"></i> Developer</div>
+                        <div class="work-company">Linedata</div>
+                        <div class="work-duration">2013 - 2014</div>
+                        <ul class="work-bullets">
+                            <li>Developed a hedge fund back-office system with C# and the .NET framework; also wrote some PL/SQL procedures.</li>
+                            <li>Worked with an international team consisting of members located in Riga, London, and Hong Kong.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-icon"><i class="fas fa-headset"></i></div>
+                    <div class="work-block">
+                        <div class="work-title"><i class="fas fa-headset"></i> Client Support Analyst</div>
+                        <div class="work-company">Linedata</div>
+                        <div class="work-duration">2012 - 2013</div>
+                        <ul class="work-bullets">
+                            <li>Supported clients using hedge fund software that the company was selling.</li>
+                            <li>Performed technical tasks mostly using SQL and non-technical tasks that involved communicating with clients via email and phone.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="divider">
+            <div class="section-title"><i class="fas fa-tasks"></i> Projects</div>
+            <div class="project-block">
+                <span class="project-icon"><i class="fas fa-home"></i></span>
+                <div>
+                    <div class="project-title">Hesti: Real Estate Evaluation App <a href="#" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a></div>
+                    <div class="project-desc">A web app for real estate evaluation, built with React, Node.js, and MongoDB. Helped users estimate property values and trends.</div>
+                </div>
+            </div>
+            <div class="project-block">
+                <span class="project-icon"><i class="fas fa-car"></i></span>
+                <div>
+                    <div class="project-title">Yelo: Road Traffic Rule App <a href="#" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a></div>
+                    <div class="project-desc">A mobile app for learning and practicing road traffic rules, built with React Native and Firebase.</div>
+                </div>
+            </div>
+            <div class="project-block">
+                <span class="project-icon"><i class="fas fa-shield-alt"></i></span>
+                <div>
+                    <div class="project-title">Anti-corruption App <a href="#" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a> <a href="#" class="project-link" target="_blank"><i class="fab fa-github"></i></a> <a href="#" class="project-link" target="_blank"><i class="fab fa-github"></i></a></div>
+                    <div class="project-desc">A civic tech app for reporting corruption, built with Angular, Node.js, and MongoDB. Open source on GitHub.</div>
+                </div>
+            </div>
+            <div class="project-block">
+                <span class="project-icon"><i class="fas fa-coins"></i></span>
+                <div>
+                    <div class="project-title">Used Car Price Evaluator App <a href="#" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a></div>
+                    <div class="project-desc">A web app for evaluating used car prices, built with Python, Flask, and PostgreSQL.</div>
+                </div>
+            </div>
+            <hr class="divider">
+            <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
+            <div class="edu-block">
+                <span class="edu-icon"><i class="fas fa-university"></i></span>
+                <div>
+                    <div class="edu-degree">Bachelor of Science Degree in Economics and Finance</div>
+                    <div class="edu-inst">Stockholm School of Economics in Riga - Riga, Latvia</div>
+                    <div class="edu-dates">2010 - 2013</div>
+                </div>
+            </div>
+            <hr class="divider">
+            <div class="section-title"><i class="fas fa-certificate"></i> Certifications</div>
+            <div class="cert-block">
+                <span class="cert-icon"><i class="fas fa-robot"></i></span>
+                <div>
+                    <div class="cert-title">Machine Learning</div>
+                    <div class="cert-issuer">Coursera</div>
+                    <div class="cert-date">2018</div>
+                </div>
+            </div>
+            <div class="cert-block">
+                <span class="cert-icon"><i class="fas fa-user-shield"></i></span>
+                <div>
+                    <div class="cert-title">Usable Security</div>
+                    <div class="cert-issuer">Coursera</div>
+                    <div class="cert-date">2017</div>
+                </div>
+            </div>
+            <div class="cert-block">
+                <span class="cert-icon"><i class="fas fa-shield-alt"></i></span>
+                <div>
+                    <div class="cert-title">Software Security</div>
+                    <div class="cert-issuer">Coursera</div>
+                    <div class="cert-date">2017</div>
+                </div>
+            </div>
+            <hr class="divider">
+            <div class="section-title"><i class="fas fa-tools"></i> Skills</div>
+            <div class="skills-section">
+                <span class="skills-icon"><i class="fas fa-lightbulb"></i></span>
+                <div class="skill-category">Libraries/APIs</div>
+                <div class="skill-badges">
+                    <span class="skill-badge">Node.js</span>
+                    <span class="skill-badge">React</span>
+                    <span class="skill-badge">REST APIs</span>
+                    <span class="skill-badge">Express.js</span>
+                </div>
+                <div class="skill-category">Tools</div>
+                <div class="skill-badges">
+                    <span class="skill-badge">Git</span>
+                    <span class="skill-badge">NPM</span>
+                    <span class="skill-badge">Jira</span>
+                </div>
+                <div class="skill-category">Languages</div>
+                <div class="skill-badges">
+                    <span class="skill-badge">JavaScript</span>
+                    <span class="skill-badge">Python</span>
+                    <span class="skill-badge">C#</span>
+                    <span class="skill-badge">SQL</span>
+                </div>
+                <div class="skill-category">Frameworks</div>
+                <div class="skill-badges">
+                    <span class="skill-badge">Angular</span>
+                    <span class="skill-badge">Bootstrap</span>
+                    <span class="skill-badge">Flask</span>
+                </div>
+                <div class="skill-category">Paradigms</div>
+                <div class="skill-badges">
+                    <span class="skill-badge">RWD</span>
+                    <span class="skill-badge">TDD</span>
+                    <span class="skill-badge">Agile</span>
+                </div>
+                <div class="skill-category">Platforms</div>
+                <div class="skill-badges">
+                    <span class="skill-badge">AWS</span>
+                    <span class="skill-badge">Ubuntu</span>
+                    <span class="skill-badge">Docker</span>
+                </div>
+                <div class="skill-category">Storage</div>
+                <div class="skill-badges">
+                    <span class="skill-badge">PostgreSQL</span>
+                    <span class="skill-badge">MongoDB</span>
+                    <span class="skill-badge">MySQL</span>
+                </div>
+                <div class="skill-category">Other</div>
+                <div class="skill-badges">
+                    <span class="skill-badge">APIs</span>
+                    <span class="skill-badge">Full-stack</span>
+                    <span class="skill-badge">Architecture</span>
+                    <span class="skill-badge">Machine Learning</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html> 

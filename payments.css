@@ -1,0 +1,569 @@
+/* Payment Overview */
+.payment-overview {
+    margin-bottom: 2rem;
+}
+
+.overview-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.overview-header {
+    margin-bottom: 1.5rem;
+}
+
+.overview-header h2 {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.balance {
+    color: var(--text-primary);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.overview-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Payment Methods */
+.payment-methods {
+    margin-bottom: 2rem;
+}
+
+.payment-methods h2 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.payment-method-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    font-size: 1.5rem;
+    /* Temporary debug style */
+    border: 1px solid red; 
+}
+
+.card-icon i {
+    color: white; /* Ensure visibility */
+}
+
+.card-icon.visa {
+    color: #1A1F71;
+}
+
+.card-icon.mastercard {
+    color: #EB001B;
+}
+
+.card-icon.amex {
+    color: #2E77BB;
+}
+
+.card-details {
+    flex: 1;
+}
+
+.card-type {
+    color: var(--text-primary);
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.card-number {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.card-actions button {
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.card-actions button:hover {
+    color: var(--text-primary);
+}
+
+.card-actions button.delete:hover {
+    color: #dc2626;
+}
+
+/* Recent Transactions */
+.recent-transactions {
+    margin-bottom: 2rem;
+}
+
+.recent-transactions h2 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.transactions-list {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-item {
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.transaction-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.transaction-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    font-size: 1.2rem;
+    /* Temporary debug style */
+    border: 1px solid red; 
+}
+
+.transaction-icon i {
+    color: white; /* Ensure visibility */
+}
+
+.transaction-icon.credit {
+    color: #10B981;
+}
+
+.transaction-icon.debit {
+    color: #EF4444;
+}
+
+.transaction-details {
+    flex: 1;
+}
+
+.transaction-title {
+    color: var(--text-primary);
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.transaction-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.transaction-amount {
+    font-weight: bold;
+}
+
+.transaction-amount.credit {
+    color: #10B981;
+}
+
+.transaction-amount.debit {
+    color: #EF4444;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.amount-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.amount-input .currency {
+    position: absolute;
+    left: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.amount-input input {
+    padding-left: 2rem;
+}
+
+.form-group small {
+    display: block;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .overview-actions {
+        flex-direction: column;
+    }
+
+    .methods-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        margin: 1rem;
+        max-height: calc(100vh - 2rem);
+    }
+}
+
+/* Project Details Section */
+.project-details-section {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-small);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.project-title-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toptal-icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.project-title {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.project-title span {
+    color: var(--text-secondary);
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.status-dot.online {
+    background-color: #28a745; /* Green for online */
+}
+
+.project-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.icon-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    color: var(--text-secondary);
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.icon-btn:hover {
+    background-color: var(--hover-bg);
+    border-color: var(--primary-color);
+}
+
+.timer-controls {
+    display: flex;
+    align-items: center;
+    background-color: #28a745;
+    border-radius: 5px;
+    padding: 5px 10px;
+    gap: 10px;
+}
+
+.play-pause-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.timer-display {
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.project-billing-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding-top: 15px;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.summary-item i {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.summary-item .icon-blue {
+    color: var(--primary-color);
+}
+
+.summary-item span {
+    color: var(--text-secondary);
+}
+
+.summary-item .value {
+    color: var(--text-primary);
+    font-weight: bold;
+}
+
+/* Time and Earnings Section */
+.time-and-earnings-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: var(--shadow-small);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-top: 0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tooltip-icon {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.card-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-item .label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.grid-item .value {
+    color: var(--text-primary);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Info Banner */
+.info-banner {
+    background-color: rgba(66, 133, 244, 0.1); /* A light blue tint */
+    color: var(--primary-color);
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    text-align: center;
+    border: 1px solid var(--primary-color);
+}
+
+.info-banner p {
+    margin: 0;
+}
+
+.info-banner span {
+    font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .time-and-earnings-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project-actions {
+        margin-top: 15px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .project-billing-summary {
+        grid-template-columns: 1fr;
+    }
+} 
